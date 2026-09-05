@@ -33,10 +33,6 @@ api = FastAPI(
 )
 
 
-# --------------------------------------------------
-# CORS
-# --------------------------------------------------
-
 allowed_origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
@@ -66,10 +62,6 @@ class PaymentRequest(BaseModel):
     event: PaymentEvent
 
 
-# --------------------------------------------------
-# BASIC ROUTES
-# --------------------------------------------------
-
 @api.get("/")
 def root():
     return {
@@ -84,10 +76,6 @@ def health():
         "status": "ok",
     }
 
-
-# --------------------------------------------------
-# DIAGNOSIS
-# --------------------------------------------------
 
 def diagnose_event(event: PaymentEvent):
     known_codes = {
@@ -112,10 +100,6 @@ def diagnose_payment(request: PaymentRequest):
 
     return diagnosis
 
-
-# --------------------------------------------------
-# RECOVERY
-# --------------------------------------------------
 
 @api.post("/payments/recover")
 def recover_payment(request: PaymentRequest):
@@ -158,10 +142,6 @@ def recover_payment(request: PaymentRequest):
     }
 
 
-# --------------------------------------------------
-# AUDIT
-# --------------------------------------------------
-
 @api.get("/audit")
 def get_audit():
     records = load_audit_records()
@@ -172,17 +152,49 @@ def get_audit():
     }
 
 
-# --------------------------------------------------
-# EVALUATION
-# --------------------------------------------------
-
 @api.get("/evaluate")
 def evaluate():
+    try:
+        events = generate_payment_events(
+            count=1000,
+            seed=42,
+        )
 
-    events = generate_payment_events(
-        count=1000,
-        seed=42,
-    )
+        baseline = run_baseline(
+            events,
+            seed=42,
+        )
 
-    # -------------------------
-    # BASELINE
+        executions = []
+        decisions = []
+
+        for event in events:
+            diagnosis = diagnose_for_large_experiment(event)
+            proposed_decision = choose_decision(diagnosis)
+            final_decision = apply_compliance(event, diagnosis, proposed_decision)
+            decisions.append(final_decision)
+            execution = execute_decision(event, final_decision.decision, seed=42)
+            executions.append(execution)
+
+        recover_ai = calculate_metrics(events, executions, decisions)
+
+        def metrics_to_dict(result):
+            return {
+                "revenue_at_risk_rupees": round(result.revenue_at_risk_rupees, 2),
+                "recovered_revenue_rupees": round(result.recovered_revenue_rupees, 2),
+                "recovery_rate_percent": round(result.recovery_rate_percent, 2),
+                "successful_recoveries": result.successful_recoveries,
+                "recovery_attempts": result.recovery_attempts,
+                "wasted_attempts": result.wasted_attempts,
+                "compliance_overrides": result.compliance_overrides,
+                "missed_recoverable_events": result.missed_recoverable_events,
+            }
+
+        return {
+            "events": len(events),
+            "baseline": metrics_to_dict(baseline),
+            "recover_ai": metrics_to_dict(recover_ai),
+        }
+    except Exception as e:
+        import traceback
+        return {"error": str(e), "trace": traceback.format_exc()}
