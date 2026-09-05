@@ -37,21 +37,18 @@ api = FastAPI(
 # CORS
 # --------------------------------------------------
 
-allowed_origins = api.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=False,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
- 
+allowed_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:5175",
+    "http://127.0.0.1:5175",
+    "https://recover-ai-theta-gray.vercel.app",
+]
 
-# Add deployed frontend URL through environment variable (optional override)
 frontend_url = os.getenv("FRONTEND_URL")
 
 if frontend_url:
     allowed_origins.append(frontend_url)
-
 
 api.add_middleware(
     CORSMiddleware,
@@ -189,76 +186,3 @@ def evaluate():
 
     # -------------------------
     # BASELINE
-    # -------------------------
-
-    baseline = run_baseline(
-        events,
-        seed=42,
-    )
-
-    # -------------------------
-    # RECOVERAI
-    # -------------------------
-
-    executions = []
-    decisions = []
-
-    for event in events:
-
-        diagnosis = diagnose_for_large_experiment(
-            event
-        )
-
-        proposed_decision = choose_decision(
-            diagnosis
-        )
-
-        final_decision = apply_compliance(
-            event,
-            diagnosis,
-            proposed_decision,
-        )
-
-        decisions.append(final_decision)
-
-        execution = execute_decision(
-            event,
-            final_decision.decision,
-            seed=42,
-        )
-
-        executions.append(execution)
-
-    recover_ai = calculate_metrics(
-        events,
-        executions,
-        decisions,
-    )
-
-    def metrics_to_dict(result):
-
-        return {
-            "revenue_at_risk_rupees": round(
-                result.revenue_at_risk_rupees,
-                2,
-            ),
-            "recovered_revenue_rupees": round(
-                result.recovered_revenue_rupees,
-                2,
-            ),
-            "recovery_rate_percent": round(
-                result.recovery_rate_percent,
-                2,
-            ),
-            "successful_recoveries": result.successful_recoveries,
-            "recovery_attempts": result.recovery_attempts,
-            "wasted_attempts": result.wasted_attempts,
-            "compliance_overrides": result.compliance_overrides,
-            "missed_recoverable_events": result.missed_recoverable_events,
-        }
-
-    return {
-        "events": len(events),
-        "baseline": metrics_to_dict(baseline),
-        "recover_ai": metrics_to_dict(recover_ai),
-    }
