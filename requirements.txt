@@ -1,6 +1,11 @@
 fastapi==0.141.1
+uvicorn[standard]==0.34.0
 pydantic==2.13.5
 pydantic_settings==2.15.0
+python-dotenv==1.1.0
+anthropic==0.49.0
 razorpay==2.0.1
-Requests==2.34.2
-razorpay==1.4.2
+requests==2.34.2
+httpx==0.28.1
+numpy==2.2.5
+pytest==8.3.5
