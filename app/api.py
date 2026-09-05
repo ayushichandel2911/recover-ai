@@ -42,9 +42,10 @@ allowed_origins = [
     "http://127.0.0.1:5173",
     "http://localhost:5175",
     "http://127.0.0.1:5175",
+    "https://recover-ai-theta-gray.vercel.app",
 ]
 
-# Add deployed frontend URL through environment variable
+# Add deployed frontend URL through environment variable (optional override)
 frontend_url = os.getenv("FRONTEND_URL")
 
 if frontend_url:
