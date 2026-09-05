@@ -1,0 +1,266 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: #f4f6fb;
+  color: #111827;
+}
+
+button {
+  font-family: inherit;
+}
+
+button:focus-visible {
+  outline: 3px solid rgba(99, 102, 241, 0.25);
+  outline-offset: 2px;
+}
+
+button:hover {
+  filter: brightness(0.98);
+}
+
+.spin {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.heroPills {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.heroPills span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 999px;
+  padding: 7px 10px;
+  color: #b9c2d7;
+  font-size: 9px;
+  font-weight: 750;
+}
+
+.pipelinePreview {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+  width: 100%;
+  max-width: 470px;
+  margin-top: 22px;
+}
+
+.pipelinePreview div {
+  background: #f7f8fb;
+  border: 1px solid #e9ebf0;
+  border-radius: 8px;
+  padding: 10px 5px;
+  color: #788296;
+  font-size: 8px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.pipelinePreview span {
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  margin: 0 auto 5px;
+  border-radius: 50%;
+  background: #eeecff;
+  color: #635bff;
+}
+
+.cardTitle h3 {
+  margin: 0;
+  font-size: 13px;
+}
+
+.cardTitle p {
+  margin: 3px 0 0;
+  color: #8b95a8;
+  font-size: 9px;
+}
+
+.rateCircle > div {
+  width: 106px;
+  height: 106px;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.rateCircle strong {
+  display: block;
+  font-size: 24px;
+  letter-spacing: -1px;
+}
+
+.rateCircle span {
+  display: block;
+  color: #929bad;
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+  margin-top: 3px;
+}
+
+.traceStep p {
+  margin: 4px 0 0;
+  color: #8b95a8;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.workflowStep span {
+  display: block;
+  color: #9891ff;
+  font-size: 8px;
+  font-weight: 850;
+  letter-spacing: 1px;
+}
+
+.workflowStep strong {
+  display: block;
+  margin-top: 7px;
+  font-size: 11px;
+}
+
+.workflowStep p {
+  color: #9da7bd;
+  font-size: 9px;
+  line-height: 1.5;
+  margin: 6px 0 0;
+}
+
+.complianceCard .kicker {
+  color: #16803c;
+}
+
+.complianceCard h3 {
+  color: #182033;
+}
+
+.table th {
+  padding: 13px 16px;
+  text-align: left;
+  background: #fafbfc;
+  color: #8a94a7;
+  font-size: 8px;
+  letter-spacing: 0.8px;
+  border-bottom: 1px solid #e9ecf1;
+}
+
+.table td {
+  padding: 13px 16px;
+  border-bottom: 1px solid #eef0f4;
+  color: #596377;
+  white-space: nowrap;
+}
+
+.table td:first-child {
+  color: #1d2638;
+}
+
+.table td small {
+  display: block;
+  color: #9aa2b1;
+  margin-top: 3px;
+  font-size: 8px;
+}
+
+.table tbody tr:hover {
+  background: #fafaff;
+}
+
+@media (max-width: 1050px) {
+  .sidebar {
+    display: none !important;
+  }
+
+  .main {
+    margin-left: 0 !important;
+  }
+
+  .performanceGrid,
+  .consoleGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .metricGrid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .content {
+    padding: 20px 14px 45px !important;
+  }
+
+  .topbar {
+    padding: 18px 16px !important;
+  }
+
+  .metricGrid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .hero {
+    padding: 24px !important;
+  }
+
+  .heroMoney {
+    font-size: 28px !important;
+  }
+
+  .heroTitle {
+    font-size: 32px !important;
+  }
+
+  .rateRow {
+    flex-direction: column !important;
+  }
+
+  .workflowSteps {
+    grid-template-columns: 1fr !important;
+  }
+
+  .heroValue {
+    position: static !important;
+    margin-top: 22px;
+  }
+
+  .complianceCard {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+
+  .footer {
+    flex-direction: column !important;
+    gap: 8px;
+  }
+}

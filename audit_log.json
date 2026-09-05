@@ -1,0 +1,1773 @@
+[
+  {
+    "event_id": "evt_0001",
+    "diagnosis": {
+      "event_id": "evt_0001",
+      "failure_code": "unknown",
+      "confidence": 0.0,
+      "method": "rule",
+      "reasoning": "Bank code '96' has no deterministic rule."
+    },
+    "decision": {
+      "event_id": "evt_0001",
+      "decision": "escalate",
+      "reason": "Failure reason is unknown; escalate for further investigation.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "evt_0001",
+      "action_taken": "escalate",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-03T00:17:57.693494"
+  },
+  {
+    "event_id": "string",
+    "diagnosis": {
+      "event_id": "string",
+      "failure_code": "insufficient_funds",
+      "confidence": 1.0,
+      "method": "llm",
+      "reasoning": "Amount is 0.00 INR, which is a common indicator of insufficient funds"
+    },
+    "decision": {
+      "event_id": "string",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "string",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-03T23:26:24.597372"
+  },
+  {
+    "event_id": "evt_compliance_001",
+    "diagnosis": {
+      "event_id": "evt_compliance_001",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "evt_compliance_001",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "evt_compliance_001",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-03T23:29:43.182329"
+  },
+  {
+    "event_id": "evt_compliance_001",
+    "diagnosis": {
+      "event_id": "evt_compliance_001",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "evt_compliance_001",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "evt_compliance_001",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-03T23:30:29.539225"
+  },
+  {
+    "event_id": "evt_compliance_002",
+    "diagnosis": {
+      "event_id": "evt_compliance_002",
+      "failure_code": "card_declined",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '05' matched the deterministic rule for 'card_declined'."
+    },
+    "decision": {
+      "event_id": "evt_compliance_002",
+      "decision": "stop",
+      "reason": "Customer has opted out of payment recovery.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "evt_compliance_002",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-03T23:31:27.542606"
+  },
+  {
+    "event_id": "demo_expired_001",
+    "diagnosis": {
+      "event_id": "demo_expired_001",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "demo_expired_001",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "demo_expired_001",
+      "action_taken": "send_payment_link",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-04T23:35:19.401602"
+  },
+  {
+    "event_id": "demo_stolen_001",
+    "diagnosis": {
+      "event_id": "demo_stolen_001",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "demo_stolen_001",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "demo_stolen_001",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-04T23:35:55.720694"
+  },
+  {
+    "event_id": "demo_stolen_001",
+    "diagnosis": {
+      "event_id": "demo_stolen_001",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "demo_stolen_001",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "demo_stolen_001",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-04T23:36:28.940969"
+  },
+  {
+    "event_id": "live_demo_1788545687303",
+    "diagnosis": {
+      "event_id": "live_demo_1788545687303",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788545687303",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788545687303",
+      "action_taken": "send_payment_link",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-04T23:44:47.307909"
+  },
+  {
+    "event_id": "live_demo_1788545711483",
+    "diagnosis": {
+      "event_id": "live_demo_1788545711483",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788545711483",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "live_demo_1788545711483",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-04T23:45:11.485041"
+  },
+  {
+    "event_id": "live_demo_1788545778588",
+    "diagnosis": {
+      "event_id": "live_demo_1788545778588",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788545778588",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788545778588",
+      "action_taken": "send_payment_link",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-04T23:46:18.590469"
+  },
+  {
+    "event_id": "live_demo_1788545787083",
+    "diagnosis": {
+      "event_id": "live_demo_1788545787083",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788545787083",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788545787083",
+      "action_taken": "send_payment_link",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-04T23:46:27.085707"
+  },
+  {
+    "event_id": "live_demo_1788545794511",
+    "diagnosis": {
+      "event_id": "live_demo_1788545794511",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788545794511",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788545794511",
+      "action_taken": "send_payment_link",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-04T23:46:34.514065"
+  },
+  {
+    "event_id": "live_demo_1788545794992",
+    "diagnosis": {
+      "event_id": "live_demo_1788545794992",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788545794992",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788545794992",
+      "action_taken": "send_payment_link",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-04T23:46:34.993772"
+  },
+  {
+    "event_id": "live_demo_1788545795232",
+    "diagnosis": {
+      "event_id": "live_demo_1788545795232",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788545795232",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788545795232",
+      "action_taken": "send_payment_link",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-04T23:46:35.233840"
+  },
+  {
+    "event_id": "live_demo_1788545795501",
+    "diagnosis": {
+      "event_id": "live_demo_1788545795501",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788545795501",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788545795501",
+      "action_taken": "send_payment_link",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-04T23:46:35.502572"
+  },
+  {
+    "event_id": "live_demo_1788545813583",
+    "diagnosis": {
+      "event_id": "live_demo_1788545813583",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788545813583",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "live_demo_1788545813583",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-04T23:46:53.584925"
+  },
+  {
+    "event_id": "pay_demo_expired_001",
+    "diagnosis": {
+      "event_id": "pay_demo_expired_001",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "pay_demo_expired_001",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "pay_demo_expired_001",
+      "action_taken": "send_payment_link",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T00:11:24.593434"
+  },
+  {
+    "event_id": "pay_demo_stolen_001",
+    "diagnosis": {
+      "event_id": "pay_demo_stolen_001",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "pay_demo_stolen_001",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "pay_demo_stolen_001",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T00:12:13.114210"
+  },
+  {
+    "event_id": "live_demo_1788548612838",
+    "diagnosis": {
+      "event_id": "live_demo_1788548612838",
+      "failure_code": "card_declined",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '05' matched the deterministic rule for 'card_declined'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788548612838",
+      "decision": "retry_now",
+      "reason": "Card decline may be transient; attempt one bounded retry.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788548612838",
+      "action_taken": "retry_now",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T00:33:32.843357"
+  },
+  {
+    "event_id": "live_demo_1788548644917",
+    "diagnosis": {
+      "event_id": "live_demo_1788548644917",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788548644917",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "live_demo_1788548644917",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T00:34:04.919365"
+  },
+  {
+    "event_id": "live_demo_1788549030873",
+    "diagnosis": {
+      "event_id": "live_demo_1788549030873",
+      "failure_code": "insufficient_funds",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '51' matched the deterministic rule for 'insufficient_funds'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788549030873",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788549030873",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T00:40:30.875027"
+  },
+  {
+    "event_id": "live_demo_1788552946855",
+    "diagnosis": {
+      "event_id": "live_demo_1788552946855",
+      "failure_code": "insufficient_funds",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '51' matched the deterministic rule for 'insufficient_funds'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788552946855",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788552946855",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T01:45:46.860368"
+  },
+  {
+    "event_id": "live_demo_1788553055983",
+    "diagnosis": {
+      "event_id": "live_demo_1788553055983",
+      "failure_code": "processor_error",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '91' matched the deterministic rule for 'processor_error'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788553055983",
+      "decision": "retry_now",
+      "reason": "Processor error may be transient; retry now.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788553055983",
+      "action_taken": "retry_now",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T01:47:35.985317"
+  },
+  {
+    "event_id": "live_demo_1788553865793",
+    "diagnosis": {
+      "event_id": "live_demo_1788553865793",
+      "failure_code": "insufficient_funds",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '51' matched the deterministic rule for 'insufficient_funds'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788553865793",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788553865793",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:01:05.800869"
+  },
+  {
+    "event_id": "live_demo_1788553878564",
+    "diagnosis": {
+      "event_id": "live_demo_1788553878564",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788553878564",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788553878564",
+      "action_taken": "send_payment_link",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:01:18.568095"
+  },
+  {
+    "event_id": "live_demo_1788553886655",
+    "diagnosis": {
+      "event_id": "live_demo_1788553886655",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788553886655",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "live_demo_1788553886655",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:01:26.659529"
+  },
+  {
+    "event_id": "live_demo_1788553894139",
+    "diagnosis": {
+      "event_id": "live_demo_1788553894139",
+      "failure_code": "processor_error",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '91' matched the deterministic rule for 'processor_error'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788553894139",
+      "decision": "retry_now",
+      "reason": "Processor error may be transient; retry now.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788553894139",
+      "action_taken": "retry_now",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:01:34.143215"
+  },
+  {
+    "event_id": "live_demo_1788553898907",
+    "diagnosis": {
+      "event_id": "live_demo_1788553898907",
+      "failure_code": "card_declined",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '05' matched the deterministic rule for 'card_declined'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788553898907",
+      "decision": "retry_now",
+      "reason": "Card decline may be transient; attempt one bounded retry.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788553898907",
+      "action_taken": "retry_now",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:01:38.909233"
+  },
+  {
+    "event_id": "live_demo_1788554364679",
+    "diagnosis": {
+      "event_id": "live_demo_1788554364679",
+      "failure_code": "insufficient_funds",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '51' matched the deterministic rule for 'insufficient_funds'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788554364679",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788554364679",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:09:24.683730"
+  },
+  {
+    "event_id": "live_demo_1788554726924",
+    "diagnosis": {
+      "event_id": "live_demo_1788554726924",
+      "failure_code": "insufficient_funds",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '51' matched the deterministic rule for 'insufficient_funds'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788554726924",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788554726924",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:15:26.947211"
+  },
+  {
+    "event_id": "live_demo_1788554730715",
+    "diagnosis": {
+      "event_id": "live_demo_1788554730715",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788554730715",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788554730715",
+      "action_taken": "send_payment_link",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:15:30.718342"
+  },
+  {
+    "event_id": "live_demo_1788554733157",
+    "diagnosis": {
+      "event_id": "live_demo_1788554733157",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788554733157",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "live_demo_1788554733157",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:15:33.160476"
+  },
+  {
+    "event_id": "live_demo_1788554735310",
+    "diagnosis": {
+      "event_id": "live_demo_1788554735310",
+      "failure_code": "processor_error",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '91' matched the deterministic rule for 'processor_error'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788554735310",
+      "decision": "retry_now",
+      "reason": "Processor error may be transient; retry now.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788554735310",
+      "action_taken": "retry_now",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:15:35.313457"
+  },
+  {
+    "event_id": "live_demo_1788554737654",
+    "diagnosis": {
+      "event_id": "live_demo_1788554737654",
+      "failure_code": "card_declined",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '05' matched the deterministic rule for 'card_declined'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788554737654",
+      "decision": "retry_now",
+      "reason": "Card decline may be transient; attempt one bounded retry.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788554737654",
+      "action_taken": "retry_now",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:15:37.657562"
+  },
+  {
+    "event_id": "live_demo_1788554814631",
+    "diagnosis": {
+      "event_id": "live_demo_1788554814631",
+      "failure_code": "insufficient_funds",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '51' matched the deterministic rule for 'insufficient_funds'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788554814631",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788554814631",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:16:54.634684"
+  },
+  {
+    "event_id": "live_demo_1788554823025",
+    "diagnosis": {
+      "event_id": "live_demo_1788554823025",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788554823025",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788554823025",
+      "action_taken": "send_payment_link",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:17:03.029128"
+  },
+  {
+    "event_id": "live_demo_1788554826865",
+    "diagnosis": {
+      "event_id": "live_demo_1788554826865",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788554826865",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "live_demo_1788554826865",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:17:06.867783"
+  },
+  {
+    "event_id": "live_demo_1788554830543",
+    "diagnosis": {
+      "event_id": "live_demo_1788554830543",
+      "failure_code": "processor_error",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '91' matched the deterministic rule for 'processor_error'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788554830543",
+      "decision": "retry_now",
+      "reason": "Processor error may be transient; retry now.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788554830543",
+      "action_taken": "retry_now",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:17:10.545824"
+  },
+  {
+    "event_id": "live_demo_1788554834235",
+    "diagnosis": {
+      "event_id": "live_demo_1788554834235",
+      "failure_code": "card_declined",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '05' matched the deterministic rule for 'card_declined'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788554834235",
+      "decision": "retry_now",
+      "reason": "Card decline may be transient; attempt one bounded retry.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788554834235",
+      "action_taken": "retry_now",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T02:17:14.238132"
+  },
+  {
+    "event_id": "live_demo_1788590989894",
+    "diagnosis": {
+      "event_id": "live_demo_1788590989894",
+      "failure_code": "insufficient_funds",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '51' matched the deterministic rule for 'insufficient_funds'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788590989894",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788590989894",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T12:19:49.912433"
+  },
+  {
+    "event_id": "live_demo_1788590994656",
+    "diagnosis": {
+      "event_id": "live_demo_1788590994656",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788590994656",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788590994656",
+      "action_taken": "send_payment_link",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T12:19:54.662897"
+  },
+  {
+    "event_id": "live_demo_1788590997527",
+    "diagnosis": {
+      "event_id": "live_demo_1788590997527",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788590997527",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "live_demo_1788590997527",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T12:19:57.530694"
+  },
+  {
+    "event_id": "live_demo_1788591001739",
+    "diagnosis": {
+      "event_id": "live_demo_1788591001739",
+      "failure_code": "processor_error",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '91' matched the deterministic rule for 'processor_error'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788591001739",
+      "decision": "retry_now",
+      "reason": "Processor error may be transient; retry now.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788591001739",
+      "action_taken": "retry_now",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T12:20:01.743873"
+  },
+  {
+    "event_id": "live_demo_1788591006200",
+    "diagnosis": {
+      "event_id": "live_demo_1788591006200",
+      "failure_code": "card_declined",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '05' matched the deterministic rule for 'card_declined'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788591006200",
+      "decision": "retry_now",
+      "reason": "Card decline may be transient; attempt one bounded retry.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788591006200",
+      "action_taken": "retry_now",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T12:20:06.205080"
+  },
+  {
+    "event_id": "live_demo_1788592087132",
+    "diagnosis": {
+      "event_id": "live_demo_1788592087132",
+      "failure_code": "insufficient_funds",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '51' matched the deterministic rule for 'insufficient_funds'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788592087132",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788592087132",
+      "action_taken": "retry_later",
+      "success": true,
+      "amount_recovered_cents": 149900
+    },
+    "timestamp": "2026-09-05T12:38:07.143223"
+  },
+  {
+    "event_id": "live_demo_1788592100019",
+    "diagnosis": {
+      "event_id": "live_demo_1788592100019",
+      "failure_code": "processor_error",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '91' matched the deterministic rule for 'processor_error'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788592100019",
+      "decision": "retry_now",
+      "reason": "Processor error may be transient; retry now.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788592100019",
+      "action_taken": "retry_now",
+      "success": true,
+      "amount_recovered_cents": 499900
+    },
+    "timestamp": "2026-09-05T12:38:20.024590"
+  },
+  {
+    "event_id": "live_demo_1788592450895",
+    "diagnosis": {
+      "event_id": "live_demo_1788592450895",
+      "failure_code": "insufficient_funds",
+      "confidence": 0.8,
+      "method": "llm",
+      "reasoning": "Amount exceeds the available balance"
+    },
+    "decision": {
+      "event_id": "live_demo_1788592450895",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788592450895",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T12:44:30.480918"
+  },
+  {
+    "event_id": "live_demo_1788592474322",
+    "diagnosis": {
+      "event_id": "live_demo_1788592474322",
+      "failure_code": "insufficient_funds",
+      "confidence": 0.8,
+      "method": "llm",
+      "reasoning": "Amount exceeds the available balance"
+    },
+    "decision": {
+      "event_id": "live_demo_1788592474322",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788592474322",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T12:44:39.493353"
+  },
+  {
+    "event_id": "live_demo_1788592625233",
+    "diagnosis": {
+      "event_id": "live_demo_1788592625233",
+      "failure_code": "insufficient_funds",
+      "confidence": 0.8,
+      "method": "llm",
+      "reasoning": "Amount exceeds the available balance"
+    },
+    "decision": {
+      "event_id": "live_demo_1788592625233",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788592625233",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T12:47:10.389699"
+  },
+  {
+    "event_id": "live_demo_1788592761510",
+    "diagnosis": {
+      "event_id": "live_demo_1788592761510",
+      "failure_code": "insufficient_funds",
+      "confidence": 0.8,
+      "method": "llm",
+      "reasoning": "Amount exceeds the available balance"
+    },
+    "decision": {
+      "event_id": "live_demo_1788592761510",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788592761510",
+      "action_taken": "retry_later",
+      "success": true,
+      "amount_recovered_cents": 199900
+    },
+    "timestamp": "2026-09-05T12:49:26.829726"
+  },
+  {
+    "event_id": "live_demo_1788592819896",
+    "diagnosis": {
+      "event_id": "live_demo_1788592819896",
+      "failure_code": "insufficient_funds",
+      "confidence": 0.8,
+      "method": "llm",
+      "reasoning": "Amount exceeds the available balance"
+    },
+    "decision": {
+      "event_id": "live_demo_1788592819896",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788592819896",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T12:50:25.156556"
+  },
+  {
+    "event_id": "live_demo_1788592853603",
+    "diagnosis": {
+      "event_id": "live_demo_1788592853603",
+      "failure_code": "insufficient_funds",
+      "confidence": 0.8,
+      "method": "llm",
+      "reasoning": "Amount exceeds the available balance"
+    },
+    "decision": {
+      "event_id": "live_demo_1788592853603",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788592853603",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T12:50:58.778650"
+  },
+  {
+    "event_id": "live_demo_1788592901712",
+    "diagnosis": {
+      "event_id": "live_demo_1788592901712",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788592901712",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "live_demo_1788592901712",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T12:51:41.718290"
+  },
+  {
+    "event_id": "live_demo_1788592988312",
+    "diagnosis": {
+      "event_id": "live_demo_1788592988312",
+      "failure_code": "insufficient_funds",
+      "confidence": 0.8,
+      "method": "llm",
+      "reasoning": "Amount exceeds the available balance"
+    },
+    "decision": {
+      "event_id": "live_demo_1788592988312",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788592988312",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T12:53:13.540921"
+  },
+  {
+    "event_id": "live_demo_1788593211172",
+    "diagnosis": {
+      "event_id": "live_demo_1788593211172",
+      "failure_code": "insufficient_funds",
+      "confidence": 0.8,
+      "method": "llm",
+      "reasoning": "Amount exceeds the available balance"
+    },
+    "decision": {
+      "event_id": "live_demo_1788593211172",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788593211172",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T12:56:56.616248"
+  },
+  {
+    "event_id": "test_96",
+    "diagnosis": {
+      "event_id": "test_96",
+      "failure_code": "insufficient_funds",
+      "confidence": 0.8,
+      "method": "llm",
+      "reasoning": "Amount exceeds the available balance"
+    },
+    "decision": {
+      "event_id": "test_96",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "test_96",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T12:58:36.848704"
+  },
+  {
+    "event_id": "live_demo_1788593967269",
+    "diagnosis": {
+      "event_id": "live_demo_1788593967269",
+      "failure_code": "unknown",
+      "confidence": 0.0,
+      "method": "llm",
+      "reasoning": "The provided information does not contain enough evidence to determine a specific failure reason."
+    },
+    "decision": {
+      "event_id": "live_demo_1788593967269",
+      "decision": "escalate",
+      "reason": "Failure reason is unknown; escalate for further investigation.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788593967269",
+      "action_taken": "escalate",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T13:09:47.641563"
+  },
+  {
+    "event_id": "live_demo_1788594070076",
+    "diagnosis": {
+      "event_id": "live_demo_1788594070076",
+      "failure_code": "unknown",
+      "confidence": 0.0,
+      "method": "llm",
+      "reasoning": "The provided information does not contain enough evidence to determine a specific failure reason."
+    },
+    "decision": {
+      "event_id": "live_demo_1788594070076",
+      "decision": "escalate",
+      "reason": "Failure reason is unknown; escalate for further investigation.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788594070076",
+      "action_taken": "escalate",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T13:11:16.035796"
+  },
+  {
+    "event_id": "live_demo_1788595904660",
+    "diagnosis": {
+      "event_id": "live_demo_1788595904660",
+      "failure_code": "insufficient_funds",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '51' matched the deterministic rule for 'insufficient_funds'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788595904660",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788595904660",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T13:41:44.671163"
+  },
+  {
+    "event_id": "live_demo_1788597621667",
+    "diagnosis": {
+      "event_id": "live_demo_1788597621667",
+      "failure_code": "unknown",
+      "confidence": 0.0,
+      "method": "llm",
+      "reasoning": "The provided information does not contain enough evidence to determine a specific failure reason."
+    },
+    "decision": {
+      "event_id": "live_demo_1788597621667",
+      "decision": "escalate",
+      "reason": "Failure reason is unknown; escalate for further investigation.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788597621667",
+      "action_taken": "escalate",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T14:10:41.318182"
+  },
+  {
+    "event_id": "live_demo_1788598290460",
+    "diagnosis": {
+      "event_id": "live_demo_1788598290460",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598290460",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788598290460",
+      "action_taken": "send_payment_link",
+      "success": true,
+      "amount_recovered_cents": 99900
+    },
+    "timestamp": "2026-09-05T14:21:30.470428"
+  },
+  {
+    "event_id": "live_demo_1788598296001",
+    "diagnosis": {
+      "event_id": "live_demo_1788598296001",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598296001",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "live_demo_1788598296001",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T14:21:36.006250"
+  },
+  {
+    "event_id": "live_demo_1788598303353",
+    "diagnosis": {
+      "event_id": "live_demo_1788598303353",
+      "failure_code": "card_declined",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '05' matched the deterministic rule for 'card_declined'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598303353",
+      "decision": "retry_now",
+      "reason": "Card decline may be transient; attempt one bounded retry.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788598303353",
+      "action_taken": "retry_now",
+      "success": true,
+      "amount_recovered_cents": 99900
+    },
+    "timestamp": "2026-09-05T14:21:43.358081"
+  },
+  {
+    "event_id": "live_demo_1788598307757",
+    "diagnosis": {
+      "event_id": "live_demo_1788598307757",
+      "failure_code": "insufficient_funds",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '51' matched the deterministic rule for 'insufficient_funds'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598307757",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788598307757",
+      "action_taken": "retry_later",
+      "success": true,
+      "amount_recovered_cents": 149900
+    },
+    "timestamp": "2026-09-05T14:21:47.760605"
+  },
+  {
+    "event_id": "live_demo_1788598311800",
+    "diagnosis": {
+      "event_id": "live_demo_1788598311800",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598311800",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788598311800",
+      "action_taken": "send_payment_link",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T14:21:51.804963"
+  },
+  {
+    "event_id": "live_demo_1788598318353",
+    "diagnosis": {
+      "event_id": "live_demo_1788598318353",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598318353",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "live_demo_1788598318353",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T14:21:58.358563"
+  },
+  {
+    "event_id": "live_demo_1788598322456",
+    "diagnosis": {
+      "event_id": "live_demo_1788598322456",
+      "failure_code": "processor_error",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '91' matched the deterministic rule for 'processor_error'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598322456",
+      "decision": "retry_now",
+      "reason": "Processor error may be transient; retry now.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788598322456",
+      "action_taken": "retry_now",
+      "success": true,
+      "amount_recovered_cents": 499900
+    },
+    "timestamp": "2026-09-05T14:22:02.459351"
+  },
+  {
+    "event_id": "live_demo_1788598325537",
+    "diagnosis": {
+      "event_id": "live_demo_1788598325537",
+      "failure_code": "unknown",
+      "confidence": 0.0,
+      "method": "llm",
+      "reasoning": "The provided information does not contain enough evidence to determine a specific failure reason."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598325537",
+      "decision": "escalate",
+      "reason": "Failure reason is unknown; escalate for further investigation.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788598325537",
+      "action_taken": "escalate",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T14:22:24.778801"
+  },
+  {
+    "event_id": "live_demo_1788598351843",
+    "diagnosis": {
+      "event_id": "live_demo_1788598351843",
+      "failure_code": "card_declined",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '05' matched the deterministic rule for 'card_declined'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598351843",
+      "decision": "retry_now",
+      "reason": "Card decline may be transient; attempt one bounded retry.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788598351843",
+      "action_taken": "retry_now",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T14:22:31.848705"
+  },
+  {
+    "event_id": "live_demo_1788598396466",
+    "diagnosis": {
+      "event_id": "live_demo_1788598396466",
+      "failure_code": "insufficient_funds",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '51' matched the deterministic rule for 'insufficient_funds'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598396466",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788598396466",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T14:23:16.472753"
+  },
+  {
+    "event_id": "live_demo_1788598537158",
+    "diagnosis": {
+      "event_id": "live_demo_1788598537158",
+      "failure_code": "card_declined",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '05' matched the deterministic rule for 'card_declined'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598537158",
+      "decision": "retry_now",
+      "reason": "Card decline may be transient; attempt one bounded retry.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788598537158",
+      "action_taken": "retry_now",
+      "success": true,
+      "amount_recovered_cents": 99900
+    },
+    "timestamp": "2026-09-05T14:25:37.166078"
+  },
+  {
+    "event_id": "live_demo_1788598546189",
+    "diagnosis": {
+      "event_id": "live_demo_1788598546189",
+      "failure_code": "insufficient_funds",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '51' matched the deterministic rule for 'insufficient_funds'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598546189",
+      "decision": "retry_later",
+      "reason": "Insufficient funds may be temporary; retry later.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788598546189",
+      "action_taken": "retry_later",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T14:25:46.194436"
+  },
+  {
+    "event_id": "live_demo_1788598554681",
+    "diagnosis": {
+      "event_id": "live_demo_1788598554681",
+      "failure_code": "expired_card",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '54' matched the deterministic rule for 'expired_card'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598554681",
+      "decision": "send_payment_link",
+      "reason": "Card appears expired; ask customer to update payment method.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788598554681",
+      "action_taken": "send_payment_link",
+      "success": true,
+      "amount_recovered_cents": 99900
+    },
+    "timestamp": "2026-09-05T14:25:54.686881"
+  },
+  {
+    "event_id": "live_demo_1788598571630",
+    "diagnosis": {
+      "event_id": "live_demo_1788598571630",
+      "failure_code": "stolen_card_suspected",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '62' matched the deterministic rule for 'stolen_card_suspected'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598571630",
+      "decision": "stop",
+      "reason": "Stolen card suspected; recovery attempts are blocked.",
+      "compliance_override": true
+    },
+    "execution": {
+      "event_id": "live_demo_1788598571630",
+      "action_taken": "stop",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T14:26:11.635840"
+  },
+  {
+    "event_id": "live_demo_1788598578613",
+    "diagnosis": {
+      "event_id": "live_demo_1788598578613",
+      "failure_code": "processor_error",
+      "confidence": 1.0,
+      "method": "rule",
+      "reasoning": "Bank code '91' matched the deterministic rule for 'processor_error'."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598578613",
+      "decision": "retry_now",
+      "reason": "Processor error may be transient; retry now.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788598578613",
+      "action_taken": "retry_now",
+      "success": false,
+      "amount_recovered_cents": 0
+    },
+    "timestamp": "2026-09-05T14:26:18.619019"
+  },
+  {
+    "event_id": "live_demo_1788598583622",
+    "diagnosis": {
+      "event_id": "live_demo_1788598583622",
+      "failure_code": "unknown",
+      "confidence": 0.0,
+      "method": "llm",
+      "reasoning": "The provided information does not contain enough evidence to determine a specific failure reason."
+    },
+    "decision": {
+      "event_id": "live_demo_1788598583622",
+      "decision": "escalate",
+      "reason": "Failure reason is unknown; escalate for further investigation.",
+      "compliance_override": false
+    },
+    "execution": {
+      "event_id": "live_demo_1788598583622",
+      "action_taken": "escalate",
+      "success": true,
+      "amount_recovered_cents": 199900
+    },
+    "timestamp": "2026-09-05T14:26:29.474643"
+  }
+]
