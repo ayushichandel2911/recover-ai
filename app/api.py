@@ -1,9 +1,11 @@
+import os
 from datetime import datetime
-from app.webhooks import router as webhook_router
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+
+from app.webhooks import router as webhook_router
 
 from app.data.models import PaymentEvent, AuditRecord
 from app.diagnosis.rules import diagnose_with_rules
@@ -29,24 +31,45 @@ api = FastAPI(
     description="AI-powered failed payment recovery agent",
     version="1.0.0",
 )
-api.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
+
+
+# --------------------------------------------------
+# CORS
+# --------------------------------------------------
+
+allowed_origins = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
     "http://localhost:5175",
     "http://127.0.0.1:5175",
-],
+]
+
+# Add deployed frontend URL through environment variable
+frontend_url = os.getenv("FRONTEND_URL")
+
+if frontend_url:
+    allowed_origins.append(frontend_url)
+
+
+api.add_middleware(
+    CORSMiddleware,
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
 api.include_router(webhook_router)
 
 
 class PaymentRequest(BaseModel):
     event: PaymentEvent
 
+
+# --------------------------------------------------
+# BASIC ROUTES
+# --------------------------------------------------
 
 @api.get("/")
 def root():
@@ -63,8 +86,18 @@ def health():
     }
 
 
+# --------------------------------------------------
+# DIAGNOSIS
+# --------------------------------------------------
+
 def diagnose_event(event: PaymentEvent):
-    known_codes = {"05", "51", "54", "62", "91"}
+    known_codes = {
+        "05",
+        "51",
+        "54",
+        "62",
+        "91",
+    }
 
     if event.raw_bank_code in known_codes:
         return diagnose_with_rules(event)
@@ -81,13 +114,19 @@ def diagnose_payment(request: PaymentRequest):
     return diagnosis
 
 
+# --------------------------------------------------
+# RECOVERY
+# --------------------------------------------------
+
 @api.post("/payments/recover")
 def recover_payment(request: PaymentRequest):
     event = request.event
 
     diagnosis = diagnose_event(event)
 
-    proposed_decision = choose_decision(diagnosis)
+    proposed_decision = choose_decision(
+        diagnosis
+    )
 
     final_decision = apply_compliance(
         event,
@@ -119,6 +158,11 @@ def recover_payment(request: PaymentRequest):
         "audit_logged": True,
     }
 
+
+# --------------------------------------------------
+# AUDIT
+# --------------------------------------------------
+
 @api.get("/audit")
 def get_audit():
     records = load_audit_records()
@@ -127,6 +171,12 @@ def get_audit():
         "count": len(records),
         "records": records[-20:],
     }
+
+
+# --------------------------------------------------
+# EVALUATION
+# --------------------------------------------------
+
 @api.get("/evaluate")
 def evaluate():
 
@@ -153,7 +203,9 @@ def evaluate():
 
     for event in events:
 
-        diagnosis = diagnose_for_large_experiment(event)
+        diagnosis = diagnose_for_large_experiment(
+            event
+        )
 
         proposed_decision = choose_decision(
             diagnosis
